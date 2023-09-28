@@ -18,5 +18,10 @@ describe Solver do
       solver = Solver.new
       expect(solver.factorial(0)).to be(0)
     end
+
+    it 'raises an exception for negative numbers' do
+      solver = Solver.new
+      expect(solver.factorial(0)).to raise_error(ArgumentError, 'Input must be a non-negative integer')
+    end
   end
 end
