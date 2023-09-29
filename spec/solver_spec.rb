@@ -56,4 +56,12 @@ describe Solver do
       expect(reversed).to eql('DCBA')
     end
   end
+
+  describe '#fizzbuzz' do
+    it 'takes an integer not divisible by 3 or 5 and returns the integer as a string' do
+      solver = Solver.new
+      result = solver.fizzbuzz(1)
+      expect(result).to eq('1')
+    end
+  end
 end
