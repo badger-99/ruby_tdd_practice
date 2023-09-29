@@ -63,5 +63,11 @@ describe Solver do
       result = solver.fizzbuzz(1)
       expect(result).to eq('1')
     end
+
+    it 'takes an integer divisible by both 3 and 5 and returns fizzbuzz' do
+      solver = Solver.new
+      result = solver.fizzbuzz(15)
+      expect(result).to eq('fizzbuzz')
+    end
   end
 end
