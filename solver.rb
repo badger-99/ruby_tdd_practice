@@ -30,6 +30,8 @@ class Solver
       'fizzbuzz'
     elsif int % 3 == 0
       'fizz'
+    elsif int % 5 == 0
+      'buzz'
     else
       int.to_s
     end
