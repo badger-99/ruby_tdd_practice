@@ -31,5 +31,29 @@ describe Solver do
       reversed = solver.reverse('')
       expect(reversed).to eql('')
     end
+
+    it 'returns reversed string when passed a string of length 1' do
+      solver = Solver.new
+      reversed = solver.reverse('A')
+      expect(reversed).to eql('A')
+    end
+
+    it 'returns reversed string when passed a string of length 2' do
+      solver = Solver.new
+      reversed = solver.reverse('AB')
+      expect(reversed).to eql('BA')
+    end
+
+    it 'returns reversed string when passed a string of odd number length' do
+      solver = Solver.new
+      reversed = solver.reverse('ABCDE')
+      expect(reversed).to eql('EDCBA')
+    end
+
+    it 'returns reversed string when passed a string of even number length' do
+      solver = Solver.new
+      reversed = solver.reverse('ABCD')
+      expect(reversed).to eql('DCBA')
+    end
   end
 end
