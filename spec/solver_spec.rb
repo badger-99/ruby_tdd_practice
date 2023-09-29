@@ -24,4 +24,12 @@ describe Solver do
       expect { solver.factorial(-1) }.to raise_error(ArgumentError, 'Input must be a non-negative integer')
     end
   end
+
+  describe '#reverse' do
+    it 'returns empty string when passed an empty string' do
+      solver = Solver.new
+      reversed = solver.reverse('')
+      expect(reversed).to eql('')
+    end
+  end
 end
