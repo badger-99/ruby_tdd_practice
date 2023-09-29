@@ -26,6 +26,8 @@ class Solver
   end
 
   def fizzbuzz(int)
+    return 'fizzbuzz' if int % 3 == 0 && int % 5 == 0
+
     int.to_s
   end
 end
