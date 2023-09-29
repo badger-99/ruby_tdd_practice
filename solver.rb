@@ -26,8 +26,12 @@ class Solver
   end
 
   def fizzbuzz(int)
-    return 'fizzbuzz' if int % 3 == 0 && int % 5 == 0
-
-    int.to_s
+    if int % 3 == 0 && int % 5 == 0
+      'fizzbuzz'
+    elsif int % 3 == 0
+      'fizz'
+    else
+      int.to_s
+    end
   end
 end
