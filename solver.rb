@@ -24,4 +24,8 @@ class Solver
     end
     char_arr.join
   end
+
+  def fizzbuzz(int)
+    int.to_s
+  end
 end
