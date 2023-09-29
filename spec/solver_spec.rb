@@ -24,4 +24,62 @@ describe Solver do
       expect { solver.factorial(-1) }.to raise_error(ArgumentError, 'Input must be a non-negative integer')
     end
   end
+
+  describe '#reverse' do
+    it 'returns empty string when passed an empty string' do
+      solver = Solver.new
+      reversed = solver.reverse('')
+      expect(reversed).to eql('')
+    end
+
+    it 'returns reversed string when passed a string of length 1' do
+      solver = Solver.new
+      reversed = solver.reverse('A')
+      expect(reversed).to eql('A')
+    end
+
+    it 'returns reversed string when passed a string of length 2' do
+      solver = Solver.new
+      reversed = solver.reverse('AB')
+      expect(reversed).to eql('BA')
+    end
+
+    it 'returns reversed string when passed a string of odd number length' do
+      solver = Solver.new
+      reversed = solver.reverse('ABCDE')
+      expect(reversed).to eql('EDCBA')
+    end
+
+    it 'returns reversed string when passed a string of even number length' do
+      solver = Solver.new
+      reversed = solver.reverse('ABCD')
+      expect(reversed).to eql('DCBA')
+    end
+  end
+
+  describe '#fizzbuzz' do
+    it 'takes an integer not divisible by 3 or 5 and returns the integer as a string' do
+      solver = Solver.new
+      result = solver.fizzbuzz(1)
+      expect(result).to eq('1')
+    end
+
+    it 'takes an integer divisible by both 3 and 5 and returns fizzbuzz' do
+      solver = Solver.new
+      result = solver.fizzbuzz(15)
+      expect(result).to eq('fizzbuzz')
+    end
+
+    it 'takes an integer divisible by 3 (but not 5) and returns fizz' do
+      solver = Solver.new
+      result = solver.fizzbuzz(9)
+      expect(result).to eq('fizz')
+    end
+
+    it 'takes an integer divisible by 5 (but not 3) and returns buzz' do
+      solver = Solver.new
+      result = solver.fizzbuzz(10)
+      expect(result).to eq('buzz')
+    end
+  end
 end
